@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+
+div{
+   border: 5px outset red;
+  background-color: lightblue;    
+ 
+}
+ul{
+  list-style-type:none;
+
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+document.getElementById("Name").innerHTML= localStorage.getItem("Name")
+document.getElementById("Roll No").innerHTML= localStorage.getItem("Roll No")
+        
+    });
+    document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector("#form").onsubmit = function(){
+       console.log(document.getElementById("form").value);
+      let value= document.querySelector('input[name="gender"]:checked').value;  
+      console.log(value);
+      localStorage.setItem("question1Answer",value)
+    };
+    });
+
+    </script>
+    <title>Quiz Application</title>
+    </head>
+    <body>
+    Name = <span id = "Name"></span>
+
+    Roll No= <span id = "Rollno" ></span>
+<div id="div">
+    <form id="form" action="question2.html">
+    <ul>
+              <p> 1. What is the fastest animal?</p>
+                <li><input type="radio" id="Peregrine Falcon" name="gender" value="Peregrine Falcon"> Peregrine Falcon<br></li>
+                <li><input type="radio" id="Golden Eagle" name="gender" value="Golden Eagle"> Golden Eagle<br></li>
+                <li><input type="radio" id="Cheetah" name="gender" value="Cheetah"> Cheetah</li>
+                <li><input type="radio" id="Horsefly" name="gender" value="Horsefly"> Horsefly<br><br>
+                 
+                </li>
+                <input type="submit" value="Submit">
+    </ul>
+</form>
+</div>
+</body>
+</html>

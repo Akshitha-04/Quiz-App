@@ -1,0 +1,54 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+
+div{
+   border: 5px outset red;
+  background-color: lightblue;    
+ 
+}
+ul{
+  list-style-type:none;
+
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+document.getElementById("Name").innerHTML= localStorage.getItem("Name")
+document.getElementById("Roll No").innerHTML= localStorage.getItem("Roll No")
+        
+    });
+    document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector("#form").onsubmit = function(){
+       console.log(document.getElementById("form").value);
+      let value= document.querySelector('input[name="gender"]:checked').value;  
+      console.log(value);
+      localStorage.setItem("question4Answer",value)
+    };
+    });
+
+    </script>
+    <title>Quiz Application</title>
+    </head>
+    <body>
+    Name = <span id = "Name"></span>
+
+    Roll No= <span id = "Roll No" ></span>
+<div id="div">
+    <form id="form" action="question5.html">
+    <ul>
+              <p>4. How many Harry Potter books are there?</p>
+                <li><input type="radio" id="7" name="gender" value="7"> 7<br></li>
+                <li><input type="radio" id="8" name="gender" value="8"> 8<br></li>
+                <li> <input type="radio" id="5" name="gender" value="5"> 5</li>
+                <li><input type="radio" id="6" name="gender" value="6"> 6<br><br>
+                 
+                </li>
+                <input type="submit" value="Submit">
+    </ul>
+</form>
+</div>
+</body>
+</html>
+

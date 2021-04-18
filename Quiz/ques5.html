@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+
+div{
+   border: 5px outset red;
+  background-color: lightblue;    
+ 
+}
+ul{
+  list-style-type:none;
+
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+document.getElementById("Name").innerHTML= localStorage.getItem("Name")
+document.getElementById("Roll No").innerHTML= localStorage.getItem("Roll No")
+        
+    });
+    document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector("#form").onsubmit = function(){
+       console.log(document.getElementById("form").value);
+      let value= document.querySelector('input[name="gender"]:checked').value;  
+      console.log(value);
+      localStorage.setItem("question5Answer",value)
+    };
+    });
+
+    </script>
+    <title>Quiz Application</title>
+    </head>
+    <body>
+    Name = <span id = "Name"></span>
+
+    Roll No= <span id = "Roll No" ></span>
+<div id="div">
+    <form id="form" action="question5.html">
+    <ul>
+              <p>5. What is the capital of Scotland?</p>
+                <li><input type="radio" id="Edinburgh" name="gender" value="Edinburgh"> Edinburgh<br></li>
+                <li><input type="radio" id="Glasgow" name="gender" value="Glasgow"> Glasgow<br></li>
+                <li><input type="radio" id="Dundee" name="gender" value="Dundee"> Dundee</li>
+                <li><input type="radio" id="London" name="gender" value="London"> London<br><br>
+                 
+                </li>
+                <input type="submit" value="Submit">
+    </ul>
+</form>
+</div>
+</body>
+</html>

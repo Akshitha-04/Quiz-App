@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+<head>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector("#form").onsubmit = function(){
+        Name = document.querySelector("#Name").value;
+        Rollno = document.querySelector("#Rollno").value;
+        localStorage.setItem("Name",Name)
+        localStorage.setItem("Rollno",Rollno)
+        
+    };
+    });
+    </script>
+    <title>Quiz Application</title>
+    </head>
+    <body>
+    <form id="form" action="question1.html">
+        <input id = "Name" autocomplete="off" autofocus placeholder="Name" type="text">
+        <input id = "Roll No" autocomplete="off" autofocus placeholder="Roll No" type="text">
+        <input type="submit">
+    </form>
+</body>
+</html>

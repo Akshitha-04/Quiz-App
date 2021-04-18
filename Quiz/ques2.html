@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+
+div{
+   border: 5px outset red;
+  background-color: lightblue;    
+ 
+}
+ul{
+  list-style-type:none;
+
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+document.getElementById("Name").innerHTML= localStorage.getItem("Name")
+document.getElementById("Roll No").innerHTML= localStorage.getItem("Roll No")
+        
+    });
+    document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector("#form").onsubmit = function(){
+       console.log(document.getElementById("form").value);
+      let value= document.querySelector('input[name="gender"]:checked').value;  
+      console.log(value);
+      localStorage.setItem("question2Answer",value)
+    };
+    });
+
+    </script>
+    <title>Quiz Application</title>
+    </head>
+    <body>
+    Name = <span id = "Name"></span>
+
+    Roll No= <span id = "Roll No" ></span>
+<div id="div">
+    <form id="form" action="question3.html">
+    <ul>
+        <p>2. Which city is the capital of the United States of America?</p>
+        <li><input type="radio" id="Washington D.C" name="gender" value="Washington D.C"> Washington D.C<br></li>
+        <li><input type="radio" id="Seattle" name="gender" value="Seattle"> Seattle<br></li>
+        <li><input type="radio" id="Albany" name="gender" value="Albany"> Albany</li>
+        <li><input type="radio" id="Los Angeles" name="gender" value="Los Angeles"> Los Angeles<br><br>
+                 
+          </li>
+        <input type="submit" value="Submit">
+    </ul>
+</form>
+</div>
+</body>
+</html>
